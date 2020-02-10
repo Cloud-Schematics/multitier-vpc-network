@@ -10,7 +10,7 @@
 
 resource ibm_is_vpc vpc {
   name           = "${var.unique_id}-vpc"
-  resource_group = "${var.resource_group_id}"
+  resource_group = "${data.ibm_resource_group.resource_group.id}"
   classic_access = "${var.classic_access}"
 }
 
@@ -81,7 +81,7 @@ module tier_2_subnets {
 # Tier 3
 ##############################################################################
 
-module tier_3_subnet_ids {
+module tier_3_subnets {
 
   source           = "./module_vpc_tier"                                # Module source folder
 
