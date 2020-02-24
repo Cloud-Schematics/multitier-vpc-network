@@ -2,8 +2,12 @@
 # Account Variables
 ##############################################################################
 
-variable ibmcloud_apikey {
+variable ibmcloud_api_key {
   description = "The IBM Cloud platform API key needed to deploy IAM enabled resources"
+}
+
+variable resource_group {
+    description = "Name of resource group to create VPC"
 }
 
 variable unique_id {
@@ -16,9 +20,9 @@ variable ibm_region {
     default     = "us-south"
 }
 
-variable resource_group {
-    description = "Name of resource group to create VPC"
-    default     = "default"
+variable generation {
+  description = "generation for VPC"
+  default     = 1
 }
 
 ##############################################################################
@@ -33,9 +37,13 @@ variable classic_access {
   default     = false
 }
 
+variable enable_public_gateway {
+  description = "Enable public gateways, true or false"
+  default     = false
+}
+
 variable tier_1_cidr_blocks {
-  description = "List of CIDR blocks for tier 1"
-  default     = [
+  default = [
     "172.16.1.128/27", 
     "172.16.3.128/27", 
     "172.16.5.128/27"
@@ -43,8 +51,7 @@ variable tier_1_cidr_blocks {
 }
 
 variable tier_2_cidr_blocks {
-  description = "List of CIDR blocks for tier 2"
-  default     = [
+  default = [
     "172.16.4.0/25", 
     "172.16.2.0/25", 
     "172.16.0.0/25"
@@ -52,22 +59,30 @@ variable tier_2_cidr_blocks {
 }
 
 variable tier_3_cidr_blocks {
-  description = "List of CIDR blocks for tier 3"
-  default     = [
+  default = [
     "172.16.1.0/26", 
     "172.16.3.0/26", 
     "172.16.5.0/26"
   ]  
 }
 
-variable subnets_per_zone {
-    description = "Number of subnets per zone"
-    default     = 1
-}
-
-variable zones {
-    description = "Number of zones to deploy subnets in"
-    default     = 3
+variable acl_rules {
+  default = [
+    {
+      name        = "egress"
+      action      = "allow"
+      source      = "0.0.0.0/0"
+      destination = "0.0.0.0/0"
+      direction   = "inbound"
+    },
+    {
+      name        = "ingress"
+      action      = "allow"
+      source      = "0.0.0.0/0"
+      destination = "0.0.0.0/0"
+      direction   = "outbound"
+    }
+  ]
 }
 
 ##############################################################################

@@ -5,7 +5,7 @@
 
 resource ibm_is_network_acl multizone_acl {
       name = "${var.unique_id}-multizone-acl"
-
+      vpc  = "${ibm_is_vpc.vpc.id}"
       dynamic rules {
             for_each = "${var.acl_rules}"
             content {

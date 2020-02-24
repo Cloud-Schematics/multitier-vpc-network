@@ -3,9 +3,9 @@
 ##############################################################################
 
 provider ibm {
-  ibmcloud_api_key      = "${var.ibmcloud_apikey}"
+  ibmcloud_api_key      = "${var.ibmcloud_api_key}"
   region                = "${var.ibm_region}"
-  generation            = 1
+  generation            = "${var.generation}"
   ibmcloud_timeout      = 60
 }
 

@@ -34,7 +34,6 @@ Use IBM Cloud™ Virtual Private Cloud to create your own space in IBM Cloud™.
 
 - [Read more about VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-about-vpc)
 - [More about using the ibm_is_vpc terraform block in v0.12.0](https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_vpc.html)
-- [More about using the ibm_is_vpc terraform block in v0.11.x](https://ibm-cloud.github.io/tf-ibm-docs/v0.23.0/r/is_vpc.html)
 
 -------
 
@@ -54,8 +53,6 @@ Each subnet consists of a specified IP address range (CIDR block). Subnets are b
 
 - [More about using the ibm_is_vpc_address_prefix terraform block in v0.12.0](https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_vpc_address_prefix.html)
 - [More about using the ibm_is_vpc_address_prefix terraform block in v0.12.0](https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_vpc_address_prefix.html)
-- [More about using the ibm_is_subnet terraform block in v0.11.x](https://ibm-cloud.github.io/tf-ibm-docs/v0.23.0/r/is_subnet.html)
-- [More about using the ibm_is_subnet terraform block in v0.12.0](https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_subnet.html)  
 
 -----
 
@@ -66,7 +63,6 @@ This module can optionally create public gateways attached to the subnets.
 A Public Gateway enables a subnet and all its attached virtual server instances to connect to the internet. Subnets are private by default. After a subnet is attached to the public gateway, all instances in that subnet can connect to the internet. Although each zone has only one public gateway, the public gateway can be attached to multiple subnets.<sup>[4](https://cloud.ibm.com/docs/vpc?topic=vpc-about-networking-for-vpc#public-gateway-for-external-connectivity)</sup>
 
 - [More about using the ibm_is_public_gateway terraform block in v0.12.0](https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_public_gateway.html)
-- [More about using the ibm_is_public_gateway terraform block in v0.11.x](https://ibm-cloud.github.io/tf-ibm-docs/v0.23.0/r/is_public_gateway.html)
 
 -----
 
@@ -88,7 +84,6 @@ ACL rules can be added and update in an `acl_rules` variable block
 
 - [More about ACLS](https://cloud.ibm.com/docs/vpc?topic=vpc-using-acls)
 - [More about using the ibm_is_network_acl terraform block in v0.12.0](https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_network_acl.html)
-- [More about using the ibm_is_network_acl terraform block in v0.11.x](https://ibm-cloud.github.io/tf-ibm-docs/v0.23.0/r/is_network_acl.html)
 
 -----
 

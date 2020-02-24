@@ -31,7 +31,7 @@ resource ibm_is_subnet subnet {
   vpc             = "${var.vpc_id}"                                                                         # VPC ID
   zone            = "${var.ibm_region}-${(count.index % var.zones) + 1}"                                    # will create a zone based on the count mod the number of zones
   ipv4_cidr_block = "${element(ibm_is_vpc_address_prefix.subnet_prefix.*.cidr, count.index)}"               # Gets the CIDR of the prefi
-  network_acl     = "${var.acl_id ? var.acl_id : null}"                                                     # ID of ACL for this subnet tier
+  network_acl     = "${var.acl_id != "" ? var.acl_id : null}"                                                     # ID of ACL for this subnet tier
   public_gateway  = "${length(var.public_gateways) > 0 ? element(var.public_gateways, count.index) : null}"
 }
 

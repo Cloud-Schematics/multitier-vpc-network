@@ -18,6 +18,7 @@ variable unique_id {
 
 variable acl_id {
     description = "ID of ACL for subnets to use"
+    default     = ""
 }
 
 
@@ -53,5 +54,11 @@ variable zones {
     description = "Number of zones to deploy subnets in"
     default     = 3
 }
+
+variable public_gateways {
+    description = "List of public gateway ids"
+    default     = []
+}
+
 
 ##############################################################################
