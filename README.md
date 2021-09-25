@@ -1,4 +1,4 @@
-# VPC Workspace
+# Multi-tier VPC network
 
 This module creates a multitier VPC in a single region with in up to 3 zones. It will create an example ACL and can optionally create public gateways for each zone. 
 
